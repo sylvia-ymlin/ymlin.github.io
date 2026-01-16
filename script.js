@@ -122,7 +122,7 @@ function openModal(index) {
     modalTitle.textContent = p.title;
 
     // Construct rich details if not present
-    let content = `<p style="margin-bottom: 1rem; color: #fff;">${p.description}</p>`;
+    let content = `<p style="margin-bottom: 1rem; color: inherit;">${p.description}</p>`;
     if (p.details) {
         content += p.details;
     }
