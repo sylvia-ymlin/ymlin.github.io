@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | ML & HPC Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">Portfolio.</div>
+        <div class="social-links">
+            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:your.email@example.com"><i class="far fa-envelope"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Building the Future">Building the Future</h1>
+            <p class="subtitle">High-Performance Computing &bull; Machine Learning &bull; Systems Engineering</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="projects">
+        <div class="section-header">
+            <h2>Select Projects</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="HPC">HPC & Systems</button>
+                <button class="filter-btn" data-filter="AI">AI & ML</button>
+                <button class="filter-btn" data-filter="Scientific">Scientific Computing</button>
+                <button class="filter-btn" data-filter="App">Web & Apps</button>
+            </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+            <!-- Projects will be injected here via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Crafted with precision.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
