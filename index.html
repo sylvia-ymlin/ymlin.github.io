@@ -1,60 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | ML & HPC Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio | ML & HPC Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="avatar-placeholder">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h2 class="name">Your Name</h2>
+                <p class="role">ML & HPC Engineer</p>
+                <div class="social-links">
+                    <a href="https://github.com/sylvia-ymlin" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>© 2026 Portfolio</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Header (Hamburger) -->
+            <div class="mobile-header">
+                <div class="logo">Portfolio</div>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <section id="about" class="section hero-section">
+                <div class="hero-text">
+                    <h1>Hello! I'm <span class="highlight">Your Name</span>.</h1>
+                    <p class="bio">
+                        I am a passionate engineer specializing in **High-Performance Computing**, **Machine Learning**,
+                        and **Scientific Simulation**.
+                        I build systems that bridge the gap between theoretical mathematics and production-grade
+                        software.
+                    </p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">HPC</span>
+                            <span class="stat-label">Focus</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <div class="section-header">
+                    <h2>Recent Projects</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="HPC">HPC</button>
+                        <button class="tab-btn" data-filter="AI">AI/ML</button>
+                        <button class="tab-btn" data-filter="Scientific">Scientific</button>
+                        <button class="tab-btn" data-filter="App">Apps</button>
+                    </div>
+                </div>
+
+                <div class="projects-list" id="projects-grid">
+                    <!-- Dynamic Content -->
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="tags">
+                            <span>C++17</span> <span>Python</span> <span>CUDA</span> <span>MATLAB</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>HPC & Systems</h3>
+                        <div class="tags">
+                            <span>MPI</span> <span>OpenMP</span> <span>OpenACC</span> <span>Docker</span>
+                            <span>NCCL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>ML & AI</h3>
+                        <div class="tags">
+                            <span>PyTorch</span> <span>TensorFlow</span> <span>LLMs</span> <span>RAG</span>
+                            <span>Diffusers</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <nav>
-        <div class="logo">Portfolio.</div>
-        <div class="social-links">
-            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:your.email@example.com"><i class="far fa-envelope"></i></a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="glitch" data-text="Building the Future">Building the Future</h1>
-            <p class="subtitle">High-Performance Computing &bull; Machine Learning &bull; Systems Engineering</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View Projects</a>
-            </div>
-        </div>
-    </header>
-
-    <main id="projects">
-        <div class="section-header">
-            <h2>Select Projects</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="HPC">HPC & Systems</button>
-                <button class="filter-btn" data-filter="AI">AI & ML</button>
-                <button class="filter-btn" data-filter="Scientific">Scientific Computing</button>
-                <button class="filter-btn" data-filter="App">Web & Apps</button>
-            </div>
-        </div>
-
-        <div class="projects-grid" id="projects-grid">
-            <!-- Projects will be injected here via JS -->
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Crafted with precision.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
