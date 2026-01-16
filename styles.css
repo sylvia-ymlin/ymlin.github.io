@@ -1,221 +1,224 @@
+/* =========================================
+   1. FONTS (fonts.css)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap');
+
+/* =========================================
+   2. MAIN VARIABLES & THEME (theme.css)
+   ========================================= */
 :root {
-    --bg-color: #ffffff;
-    --text-primary: #1c1c1c;
-    --text-secondary: #555555;
-    --accent: #000000;
-    --border-color: #e0e0e0;
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* DEFAULT DARK THEME (Moonwalk default) */
+    --bg: #1f242A;
+    --bg-secondary: #323945;
+    --code-text: #91A7FF;
+    --headings: #74c0fc;
+    --highlight: #41C7C7;
+    --links: #91A7FF;
+    --share-text: #C4C4C4;
+    --text: #adb5bd;
+    --text-secondary: #9CA3AF;
+    --border: #444;
+    /* Added for blockquote */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #FFF;
+        --bg-secondary: #f3f4f6;
+        --code-text: #9D174D;
+        --headings: #1e293b;
+        --highlight: #FFECB2;
+        --links: #6366f1;
+        --share-text: #999;
+        --text: #374151;
+        --text-secondary: #6b7280;
+        --border: #e2e8f0;
+    }
+}
+
+/* =========================================
+   3. BASE STYLES (moonwalk.css)
+   ========================================= */
+html {
+    height: 100%;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-main);
-    line-height: 1.6;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Inter", -apple-system, "avenir next", avenir, roboto, noto, ubuntu, "helvetica neue", helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+pre,
+code {
+    font-family: "Roboto Mono", "Courier New", monospace;
+    font-size: 0.9rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--headings);
+    margin-top: 1.5em;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+hr {
+    margin: 1em 0;
+    border: 0;
+    border-top: 1px dashed var(--text);
+}
+
+p {
+    margin: 1em 0;
+}
+
+li {
+    margin: 0.4em 0;
+}
+
+.w {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4em 2em;
 }
 
 a {
-    color: inherit;
+    color: var(--links);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 a:hover {
-    color: var(--accent);
     text-decoration: underline;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* =========================================
+   4. UTILITIES
+   ========================================= */
+.dashed {
+    border-top: 1px dashed var(--text);
+    margin: 0.5em 0;
 }
 
-/* Header */
-.site-header {
-    margin-bottom: 4rem;
-}
-
-.site-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-brand {
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: -0.5px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-links a {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-/* Intro */
-.intro {
-    margin-bottom: 4rem;
-}
-
-.intro h1 {
-    font-size: 2.5rem;
-    letter-spacing: -1px;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.highlight {
-    color: var(--accent);
-    /* or a specific accent color if you prefer */
-    text-decoration: underline;
-    text-decoration-color: #555;
-    text-underline-offset: 4px;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-}
-
-/* Projects List */
-.list-header {
-    display: flex;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+.text-upcase {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.list-header span:nth-child(1) {
-    width: 80px;
-}
-
-/* Year */
-.list-header span:nth-child(2) {
-    flex: 1;
-}
-
-/* Title */
-.list-header span:nth-child(3) {
-    width: 250px;
-    text-align: right;
-}
-
-/* Tech */
-
-.project-row {
-    display: flex;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    transition: opacity 0.2s;
-}
-
-.project-row:hover {
-    opacity: 0.8;
-}
-
-.project-year {
-    width: 80px;
+.tag {
+    font-family: "Roboto Mono", "Courier New", monospace;
+    padding: 0.4em 1em;
+    margin-right: 0.5em;
+    border-radius: 1em;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: lowercase;
     color: var(--text-secondary);
-    font-family: monospace;
-    font-size: 0.9rem;
+    background-color: var(--bg-secondary);
 }
 
-.project-info {
-    flex: 1;
+/* =========================================
+   5. LIST / CARDS (list.css)
+   ========================================= */
+ul.horizontal-list {
+    display: flex;
+    margin-top: 0em;
+    margin-left: -40px;
+    /* Reset default UL padding */
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+ul.horizontal-list li {
+    display: inline;
+    margin-right: 1em;
+}
+
+.card {
+    padding: 1em;
+    width: 14em;
+    /* Slightly wider than original 11em for better fit */
+    height: auto;
+    text-align: left;
+    /* Changed from center for better read */
+    font-size: 1em;
+    margin-top: 0.8em;
+    border-radius: 0.5em;
+    border: 1px solid var(--text);
+    background-color: var(--bg-secondary);
     display: flex;
     flex-direction: column;
 }
 
-.project-title {
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+.card a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    color: inherit;
 }
 
-.project-desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    display: none;
-    /* Hidden by default in Moonwalk list view, can toggle or keeps simple */
+.card .header {
+    display: block;
+    font-weight: bold;
+    color: var(--links);
+    margin-bottom: 0.5em;
 }
 
-/* Tags on Desktop */
-.project-tags {
-    width: 250px;
-    text-align: right;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
+.card hr {
+    margin: 0.5em 0;
+    border-top: 1px solid var(--text-secondary);
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    .desktop-only {
-        display: none;
+.card .body {
+    font-size: 0.85em;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+/* Responsive cards */
+@media screen and (max-width: 600px) {
+    ul.horizontal-list {
+        margin-left: 0;
+        justify-content: center;
     }
 
-    .list-header span:nth-child(3) {
-        display: none;
-    }
-
-    .project-row {
-        flex-direction: column;
-        gap: 0.2rem;
-    }
-
-    .project-year {
-        font-size: 0.8rem;
-        margin-bottom: 0.2rem;
-    }
-
-    .project-tags {
+    ul.horizontal-list li.card {
         width: 100%;
-        text-align: left;
-        margin-top: 0.3rem;
-        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 1em;
+        margin-right: 0;
     }
 }
 
-/* Footer */
-.site-footer {
-    margin-top: auto;
-    padding-top: 4rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
+/* =========================================
+   6. HEADER & NAV
+   ========================================= */
+nav {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
 }
 
-/* Modal Styles */
+nav a {
+    font-weight: bold;
+}
+
+/* =========================================
+   7. MODAL (Custom for Details)
+   ========================================= */
 dialog {
     background: transparent;
     border: none;
@@ -223,7 +226,7 @@ dialog {
     max-width: 600px;
     width: 90%;
     margin: auto;
-    color: var(--text-primary);
+    color: var(--text);
 }
 
 dialog::backdrop {
@@ -232,10 +235,10 @@ dialog::backdrop {
 }
 
 .modal-content {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
+    background: var(--bg);
+    border: 1px solid var(--text);
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -244,48 +247,39 @@ dialog::backdrop {
 
 .modal-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px dashed var(--text);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fcfcfc;
+    background: var(--bg-secondary);
 }
 
 .modal-header h2 {
     font-size: 1.2rem;
     margin: 0;
+    color: var(--headings);
 }
 
 .close-modal {
     background: none;
     border: none;
-    color: var(--text-secondary);
+    color: var(--text);
     font-size: 1.5rem;
     cursor: pointer;
     line-height: 1;
-    padding: 0 0.5rem;
-}
-
-.close-modal:hover {
-    color: var(--accent);
 }
 
 .modal-body {
     padding: 1.5rem;
     overflow-y: auto;
     line-height: 1.7;
-    color: var(--text-secondary);
-}
-
-.modal-body ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
+    color: var(--text);
 }
 
 .modal-footer {
     padding: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    background: #fcfcfc;
+    border-top: 1px dashed var(--text);
+    background: var(--bg-secondary);
     text-align: right;
 }
 
@@ -293,18 +287,10 @@ dialog::backdrop {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--text-primary);
-    color: var(--bg-color);
+    background: var(--links);
+    color: var(--bg);
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 0.9rem;
     text-decoration: none;
-    transition: transform 0.2s;
-}
-
-.btn-github:hover {
-    transform: translateY(-2px);
-    text-decoration: none;
-    background: white;
 }

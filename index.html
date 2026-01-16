@@ -2,73 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1.1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | ymlin</title>
+    <link rel="stylesheet" href="styles.css?v=2.0">
 </head>
 
 <body>
-    <div class="container">
-        <header class="site-header">
-            <nav class="site-nav">
-                <a href="#" class="nav-brand">ymlin</a>
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Works</a></li>
-                    <li><a href="https://github.com/sylvia-ymlin" target="_blank">GitHub</a></li>
-                    <li><a href="mailto:your.email@example.com">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <main>
+        <div class="w">
+            <!-- Header (partial) -->
+            <header>
+                <nav>
+                    <a href="#">/works</a>
+                    <a href="https://github.com/sylvia-ymlin" target="_blank">/github</a>
+                    <a href="mailto:your.email@example.com">/contact</a>
+                </nav>
+                <div class="dashed"></div>
+                <h1>ymlin</h1>
+                <p>Hello! I build high-performance systems for AI and Scientific Computing.</p>
+            </header>
 
-        <main class="content">
-            <section class="intro">
-                <h1>Hi, I'm <span class="highlight">Your Name</span>.</h1>
-                <p>
-                    I engineer high-performance systems for machine learning and scientific simulation.
-                    Specializing in C++, CUDA, and Modern AI.
+            <!-- Portfolio Section -->
+            <h2>Portfolio</h2>
+            <ul class="horizontal-list" id="project-list">
+                <!-- Projects will be injected here by script.js -->
+            </ul>
+
+            <!-- Blog/Other Section (Optional placeholder) -->
+            <!-- <h2>Blog</h2>
+            <ul>
+                <li>2025-01-01 » <a href="#">My Journey in HPC</a></li>
+            </ul> -->
+
+            <footer>
+                <div class="dashed"></div>
+                <p class="credits">
+                    &copy; 2026 ymlin | Theme <a href="https://github.com/ArkhamCookie/moonwalk-hugo"
+                        target="_blank">Moonwalk</a>
                 </p>
-            </section>
+            </footer>
+        </div>
+    </main>
 
-            <section class="projects-section">
-                <div class="list-header">
-                    <span>Year</span>
-                    <span>Project</span>
-                    <span class="desktop-only">Tech</span>
-                </div>
-                <div id="project-list" class="simple-list">
-                    <!-- Projects injected here -->
-                </div>
-            </section>
-        </main>
+    <!-- Details Modal -->
+    <dialog id="project-modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Project Title</h2>
+                <button class="close-modal">&times;</button>
+            </header>
+            <div class="modal-body" id="modal-body"></div>
+            <footer class="modal-footer">
+                <a href="#" id="modal-github" target="_blank" class="btn-github">View Code</a>
+            </footer>
+        </div>
+    </dialog>
 
-        <footer class="site-footer">
-            <p>&copy; 2026. Built with simple HTML/CSS.</p>
-        </footer>
-
-        <!-- Project Details Modal -->
-        <dialog id="project-modal" class="modal">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h2 id="modal-title">Project Title</h2>
-                    <button class="close-modal">&times;</button>
-                </header>
-                <div class="modal-body" id="modal-body">
-                    <!-- Dynamic Content -->
-                </div>
-                <footer class="modal-footer">
-                    <a href="#" id="modal-github" target="_blank" class="btn-github">
-                        <i class="fab fa-github"></i> View Code on GitHub
-                    </a>
-                </footer>
-            </div>
-        </dialog>
-    </div>
-
-    <script src="script.js?v=1.2"></script>
+    <script src="script.js?v=2.0"></script>
 </body>
 
 </html>
