@@ -88,6 +88,14 @@ a:hover {
     line-height: 1.1;
 }
 
+.highlight {
+    color: var(--accent);
+    /* or a specific accent color if you prefer */
+    text-decoration: underline;
+    text-decoration-color: #555;
+    text-underline-offset: 4px;
+}
+
 .intro p {
     font-size: 1.1rem;
     color: var(--text-secondary);
