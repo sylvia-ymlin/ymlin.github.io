@@ -4,120 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | ML & HPC Engineer</title>
+    <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="profile-section">
-                <div class="avatar-placeholder">
-                    <i class="fas fa-user-astronaut"></i>
-                </div>
-                <h2 class="name">Your Name</h2>
-                <p class="role">ML & HPC Engineer</p>
-                <div class="social-links">
-                    <a href="https://github.com/sylvia-ymlin" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#about" class="active">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
+    <div class="container">
+        <header class="site-header">
+            <nav class="site-nav">
+                <a href="#" class="nav-brand">ymlin</a>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Works</a></li>
+                    <li><a href="https://github.com/sylvia-ymlin" target="_blank">GitHub</a></li>
+                    <li><a href="mailto:your.email@example.com">Contact</a></li>
                 </ul>
             </nav>
+        </header>
 
-            <div class="sidebar-footer">
-                <p>© 2026 Portfolio</p>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Mobile Header (Hamburger) -->
-            <div class="mobile-header">
-                <div class="logo">Portfolio</div>
-                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-            </div>
-
-            <section id="about" class="section hero-section">
-                <div class="hero-text">
-                    <h1>Hello! I'm <span class="highlight">Your Name</span>.</h1>
-                    <p class="bio">
-                        I am a passionate engineer specializing in **High-Performance Computing**, **Machine Learning**,
-                        and **Scientific Simulation**.
-                        I build systems that bridge the gap between theoretical mathematics and production-grade
-                        software.
-                    </p>
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">HPC</span>
-                            <span class="stat-label">Focus</span>
-                        </div>
-                    </div>
-                </div>
+        <main class="content">
+            <section class="intro">
+                <h1>Hi, I'm <span class="highlight">Your Name</span>.</h1>
+                <p>
+                    I engineer high-performance systems for machine learning and scientific simulation.
+                    Specializing in C++, CUDA, and Modern AI.
+                </p>
             </section>
 
-            <section id="projects" class="section">
-                <div class="section-header">
-                    <h2>Recent Projects</h2>
-                    <div class="tabs">
-                        <button class="tab-btn active" data-filter="all">All</button>
-                        <button class="tab-btn" data-filter="HPC">HPC</button>
-                        <button class="tab-btn" data-filter="AI">AI/ML</button>
-                        <button class="tab-btn" data-filter="Scientific">Scientific</button>
-                        <button class="tab-btn" data-filter="App">Apps</button>
-                    </div>
+            <section class="projects-section">
+                <div class="list-header">
+                    <span>Year</span>
+                    <span>Project</span>
+                    <span class="desktop-only">Tech</span>
                 </div>
-
-                <div class="projects-list" id="projects-grid">
-                    <!-- Dynamic Content -->
-                </div>
-            </section>
-
-            <section id="skills" class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <div class="tags">
-                            <span>C++17</span> <span>Python</span> <span>CUDA</span> <span>MATLAB</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>HPC & Systems</h3>
-                        <div class="tags">
-                            <span>MPI</span> <span>OpenMP</span> <span>OpenACC</span> <span>Docker</span>
-                            <span>NCCL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>ML & AI</h3>
-                        <div class="tags">
-                            <span>PyTorch</span> <span>TensorFlow</span> <span>LLMs</span> <span>RAG</span>
-                            <span>Diffusers</span>
-                        </div>
-                    </div>
+                <div id="project-list" class="simple-list">
+                    <!-- Projects injected here -->
                 </div>
             </section>
         </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026. Built with simple HTML/CSS.</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
